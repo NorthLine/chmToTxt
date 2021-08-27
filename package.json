@@ -1,0 +1,14 @@
+{
+    "name": "chmtotxt",
+    "version": "1.0.0",
+    "description": "将chm文件提取文字转为txt",
+    "main": "index.js",
+    "scripts": {
+        "run": "node index.js"
+    },
+    "dependencies": {
+        "iconv-lite": "0.6.3"
+    },
+    "author": "w4gm@foxmail.com",
+    "license": "ISC"
+}
