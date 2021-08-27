@@ -2,12 +2,12 @@ const ComponentInit = require("./getPathTree");
 const getTxtAndResolveToSingleTxxt = require('./dirToTxt')
 const exportMain = require("./exportChm")
 
-let getTree = ComponentInit("\\小说合集"); //这里书文件夹入口 文件夹应与index。js同级  同时文件地址为  \\ 开头
+let getTree = ComponentInit("\\book"); //这里书文件夹入口 文件夹应与index。js同级  同时文件地址为  \\ 开头
 //getTree为解析获取到的JSON书文件
 
 
 //-----------------------------------------------Start 分析并提取出chm文件的地址数组对象 -------------------------------------------------------
-
+//具体怎么处理根据不同的情况  输出getTree  根据getTree的结构自行编写  
 let allChild = getTree.childDir;
 let newArray = [];
 for (var i in allChild) {
@@ -25,7 +25,7 @@ let exportStart = 0
 let EndNumbesss = newArray.length
 
 
-let textStart = 130
+let textStart = 0
 let textEnd = newArray.length
 
 // 遍历并定义解压文件名称
@@ -80,6 +80,6 @@ function exportFiles() {
             exportFiles()
         }, 3000);
     } else {
-        console.log('输出完成');
+        console.log('输出完成，按 CTRL+C 关闭');
     }
 }
